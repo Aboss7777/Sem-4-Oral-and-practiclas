@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>Patient Admission form for Hospital</h1>
+    <title>Patient Admission Form</title>
+  </head>
+  <body>
+    <form id="myform">
+      <br />
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="dob">Date of birth:</label>
+      <input type="date" id="dob" name="dob" required>
+      <br>
+      <label for="phone">Phone Number:</label>
+      <input type="number" id="phoneNo" name="phone" />
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+      <br />
+      <br />
+      <button type="submit">Submit</button>
+      <br />
+      <br />
+      <div id="result"></div>
+    </form>
+
+    <script>
+      function validateNumber(input) {
+        var re = /^(\d{3})[- ]?(\d{3})[- ]?(\d{4})$/
+
+        return re.test(input)
+      }
+
+      function validateForm(event) {
+        var number = document.getElementById('phoneNo').value
+        if (!validateNumber(number)) {
+          alert('Please enter a valid number')
+          const ele = document.getElementById('result')
+          ele.innerHTML = 'Validation Failed'
+          ele.style.color = 'red'
+        } else {
+          const ele = document.getElementById('result')
+          ele.innerHTML = 'Validation Successful'
+          ele.style.color = 'green'
+        }
+        event.preventDefault()
+      }
+
+      document.getElementById('myform').addEventListener('submit', validateForm)
+    </script>
+  </body>
+</html>

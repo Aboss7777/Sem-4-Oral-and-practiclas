@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Slide Effects Example</title>
+  <style>
+    #box {
+      height: 100px;
+      width: 200px;
+      background-color: lightblue;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="slideUp">Slide Up</button>
+  <button id="slideDown">Slide Down</button>
+  <button id="slideToggle">Slide Toggle</button>
+  <div id="box">This is the content that will be animated.</div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#slideUp").click(function() {
+        $("#box").slideUp();
+      });
+      
+      $("#slideDown").click(function() {
+        $("#box").slideDown();
+      });
+      
+      $("#slideToggle").click(function() {
+        $("#box").slideToggle();
+      });
+    });
+  </script>
+</body>
+</html>

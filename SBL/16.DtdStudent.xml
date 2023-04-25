@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="DtdStudent.xsl" type="text/xsl"?>
+<!DOCTYPE Student [
+    <!ELEMENT Details (Name,Class,RollNo)>
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Class (#PCDATA)>
+    <!ELEMENT RollNo (#PCDATA)>
+]>
+<Student>
+    <Details>
+        <Name>Ayush</Name>
+        <Class>Div C</Class>
+        <RollNo>1256</RollNo>
+    </Details>
+</Student>
